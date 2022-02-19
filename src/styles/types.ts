@@ -10,6 +10,7 @@ declare module 'styled-components' {
         background: string
         backgroundDesktop: string
         backgroundMobile: string
+        bgInput: string
         text: string
         primary: string
         textTable: string

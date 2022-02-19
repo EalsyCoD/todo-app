@@ -1,21 +1,67 @@
-import {AnyAction} from 'redux'
-import { ThunkAction } from 'redux-thunk'
-import { State, DispatchTaskType } from '../../types'
+import axios from 'axios'
 
 
-const initTasks = (
-    task: string,
-    completed: boolean
-): ThunkAction<void, State, unknown, AnyAction> =>{
-    return async(dispatch: DispatchTaskType ) =>{
+const initTasks = () => {
+    return async (dispatch: (arg0: { type: string; payload: any }) => void) => {
+      try {
+        const res = await axios.get('/tasks')
         dispatch({
-            type: 'INIT-TASKS',
-            payload: {
-                task: task,
-                completed: completed
-            }
+          type: 'INIT-TASKS',
+          payload: res.data,
         })
+      } catch (err) {}
     }
-}
+  }
 
-export { initTasks }
+const deleteTask = (id: number) => {
+    return async (dispatch: (arg0: { type: string; payload: number }) => void) => {
+      try {
+        await axios.delete(`/tasks/${id}`)
+        dispatch({
+          type: 'DELETE-TASKS',
+          payload: id,
+        })
+      } catch (err) {}
+    }
+  }
+
+  const checkTask = (task: any) => {
+    return async (dispatch: (arg0: { type: string; payload: any }) => void) => {
+      try {
+        const res = await axios.put(`/tasks/${task.id}`, {
+          task: task.task,
+          completed: !task.completed,
+        })
+        dispatch({
+          type: 'CHECK-TASKS',
+          payload: task.id,
+        })
+      } catch (err) {}
+    }
+  }
+
+const taskAdd = (newTask: any) => {
+    return async (dispatch: (arg0: { type: string; payload: any }) => void) => {
+      try {
+        const res = await axios.post('/tasks', newTask)
+        dispatch({
+          type: 'ADD-TASKS',
+          payload: res.data,
+        })
+      } catch (err) {}
+    }
+  }
+
+const switchTask = (items: any) => {
+    return async (dispatch: (arg0: { type: string; payload: any }) => void) => {
+      dispatch({ type: 'SWITCH-TASK', payload: items })
+    }
+  }
+
+
+
+
+
+
+
+export { initTasks, deleteTask, checkTask, taskAdd, switchTask}

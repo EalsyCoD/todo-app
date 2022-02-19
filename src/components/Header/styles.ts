@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.header`
   display:flex;
   justify-content: space-between;
-  padding: 50px 40px 0px 0px;
+  padding: 50px 30px 0px 0px;
   margin: auto;
 
 

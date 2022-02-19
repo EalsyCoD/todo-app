@@ -1,10 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   title: 'light',
-  IconSwitch: './images/icon-sun.svg',
+  IconSwitch: './images/icon-moon.svg',
+
 
   colors: {
     background: 'hsl(0, 0%, 98%)',
+    bgInput: '#ffffff',
     backgroundDesktop: './images/bg-desktop-light.jpg',
     backgroundMobile: './images/bg-mobile-light.jpg',
     text: '#fff',

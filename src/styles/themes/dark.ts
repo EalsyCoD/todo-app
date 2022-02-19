@@ -1,10 +1,12 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
   title: 'dark',
-  IconSwitch: './images/icon-moon.svg',
+  IconSwitch: ' ./images/icon-sun.svg',
   
+ 
   colors: {
     background: 'hsl(235, 21%, 11%)',
+    bgInput: '#25273c',
     backgroundDesktop: './images/bg-desktop-dark.jpg',
     backgroundMobile: './images/bg-mobile-dark.jpg',
     text: '#fff',
