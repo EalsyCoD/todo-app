@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios'
 
 
@@ -54,7 +55,26 @@ const taskAdd = (newTask: any) => {
 
 const switchTask = (items: any) => {
     return async (dispatch: (arg0: { type: string; payload: any }) => void) => {
-      dispatch({ type: 'SWITCH-TASK', payload: items })
+      dispatch({
+         type: 'SWITCH-TASK', payload: items 
+        })
+    }
+  }
+
+
+  const Filter = (filter: any) => {
+    return async (dispatch: (arg0: { type: string; payload: any; }) => void) => {
+      dispatch({ 
+        type: 'FILTER-TASKS', payload: filter
+      })
+    }
+  }
+
+  const Clear = () => {
+    return async (dispatch: (arg0: { type: string; }) => void) => {
+      dispatch({
+        type: 'CLEAR-TASKS'
+      })
     }
   }
 
@@ -64,4 +84,4 @@ const switchTask = (items: any) => {
 
 
 
-export { initTasks, deleteTask, checkTask, taskAdd, switchTask}
+export { initTasks, deleteTask, checkTask, taskAdd, switchTask, Clear, Filter}

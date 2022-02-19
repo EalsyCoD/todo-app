@@ -2,6 +2,11 @@ export interface StateTask {
     tasks: TaskStateElement 
 }
 
+export type TaskFilterTask = {
+    tasks: any
+    completed: string
+}
+
 export type TaskStateElement = {
     completed: string
     task: any
@@ -19,6 +24,7 @@ export type TaskAction = {
 
 export type TaskState  = {
     tasks:  string | any
+    filter: any
 }
 export type TaskStateReducer  = {
     filter : any

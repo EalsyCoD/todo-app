@@ -3,13 +3,17 @@ import { useDispatch } from 'react-redux'
 import { ThemeProvider, DefaultTheme } from 'styled-components'
 import { initTasks } from './ducks/actions/taskAction';
 
-import { Container } from './styles/styles';
+import { Container, TodoContainer } from './styles/styles';
 
 import GlobalStyle from './styles/global'
 import light from './styles/themes/light'
 import dark from './styles/themes/dark'
 
 import Header from './components/Header'
+import TodoList from './components/TodoList';
+import TaskAdd from './components/TaskAdd'
+import TaskFilter from './components/TaskFilter';
+import Footer from './components/Footer';
 
 const App = (): JSX.Element =>{
  const dispatch = useDispatch()
@@ -28,6 +32,12 @@ useEffect(() => {
     <GlobalStyle />
     <Container>
     <Header toggleTheme={toggleTheme} titleTheme={theme.title} />
+    <TodoContainer>
+      <TaskAdd />
+      <TodoList />
+      <TaskFilter />
+    </TodoContainer>
+    <Footer />
     </Container>
   </ThemeProvider>
 )

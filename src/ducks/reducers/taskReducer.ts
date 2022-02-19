@@ -42,6 +42,20 @@ const taskReducer = (
                   ...state,
                   tasks: action.payload,
                 }
+                  case 'CLEAR-TASKS':
+                    return{
+                      ...state, tasks: state.tasks.filter((task:any) => !task.completed)
+                    }
+                    case 'FILTER-TASKS':
+                      return {
+                        ...state,
+                        filter: state.filter.map((item: any) =>
+                        item.title === action.payload
+                        ? {...item, active: true}
+                        : {...item, active: false}
+                        ),
+                      }
+                      
           default:
             return state
           }
