@@ -63,7 +63,7 @@ const switchTask = (items: any) => {
 
 
   const Filter = (filter: any) => {
-    return async (dispatch: (arg0: { type: string; payload: any; }) => void) => {
+    return async (dispatch: (arg0: { type: string; payload: any; }) => void, _getState: any)  => {
       dispatch({ 
         type: 'FILTER-TASKS', payload: filter
       })
@@ -85,3 +85,5 @@ const switchTask = (items: any) => {
 
 
 export { initTasks, deleteTask, checkTask, taskAdd, switchTask, Clear, Filter}
+
+

@@ -2,9 +2,6 @@ import { createGlobalStyle } from 'styled-components'
 
 
 export default createGlobalStyle `
-:root{
-    --bgCheck: hsl(220, 98%, 61%);
-  }
 
 *{
     margin: 0;

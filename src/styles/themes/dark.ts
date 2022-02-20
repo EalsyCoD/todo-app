@@ -2,9 +2,10 @@
 export default {
   title: 'dark',
   IconSwitch: ' ./images/icon-sun.svg',
-  
  
   colors: {
+    bgCheck: 'hsl(192, 100%, 67%)',
+    IconCheck: './images/icon-check.svg',
     background: 'hsl(235, 21%, 11%)',
     bgInput: '#25273c',
     backgroundDesktop: './images/bg-desktop-dark.jpg',

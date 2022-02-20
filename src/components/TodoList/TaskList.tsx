@@ -46,7 +46,6 @@ return(
 
       <TextTask
         color={task.completed ? 'textBorderTable' : 'textTable'}
-
       >
         {task.task}
       </TextTask>

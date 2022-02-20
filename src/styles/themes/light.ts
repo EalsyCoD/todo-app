@@ -3,8 +3,9 @@ export default {
   title: 'light',
   IconSwitch: './images/icon-moon.svg',
 
-
   colors: {
+    bgCheck: 'hsl(192, 100%, 67%)',
+    IconCheck: './images/icon-check.svg',
     background: 'hsl(0, 0%, 98%)',
     bgInput: '#ffffff',
     backgroundDesktop: './images/bg-desktop-light.jpg',

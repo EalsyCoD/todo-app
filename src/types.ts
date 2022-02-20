@@ -1,10 +1,10 @@
-export interface StateTask {
-    tasks: TaskStateElement 
+export interface StateTasks {
+    tasks: TaskFilterTask
 }
 
 export type TaskFilterTask = {
     tasks: any
-    completed: string
+    filter: any
 }
 
 export type TaskStateElement = {
@@ -34,7 +34,7 @@ export type TaskStateReducer  = {
 
 export type TaskTS ={
     tasks: any
-    filter: []
+
 }
 
 

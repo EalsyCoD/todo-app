@@ -5,8 +5,9 @@ declare module 'styled-components' {
         title: string
         IconSwitch: string
 
-
         colors: {
+        bgCheck: string
+        IconCheck: string
         background: string
         backgroundDesktop: string
         backgroundMobile: string

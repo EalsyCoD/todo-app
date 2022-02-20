@@ -6,6 +6,8 @@ export const ListTask = styled.ul`
   width: 100%;
   list-style: none;
   border-radius: 5px;
+  border-collapse: collapse;
+  border-spacing: 0;
   box-shadow: 10px 10px 30px 5px ;
   background-color: ${(props) => props.theme.colors.bgInput};
   font-size: 1rem;
@@ -29,11 +31,16 @@ export const BtnCompleted = styled.button`
   height: 25px;
   margin-right: 1.5em;
   border: 1.5px solid ${(props) => props.theme.colors.textBorderTable};
+  background-image: url(${(props) => props.theme.colors.IconCheck});
   border-radius: 50%;
-  background-color: var(--bgCheck);
+  background-color: ${(props) => props.theme.colors.bgCheck};
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+
+  &:hover{
+    border-color: ${(props) => props.theme.colors.bgCheck};
+  }
 `
 
 export const TextTask = styled.p`
@@ -43,6 +50,7 @@ export const TextTask = styled.p`
       width: 83%;
     }
   }
+
 `
 
 export const BtnDelete = styled.p`
@@ -68,10 +76,8 @@ export const TaskContainer = styled.li`
   border-bottom: 1px solid ${(props) => props.theme.colors.textBorderTable};
   @media (min-width: 635px) {
     &:hover ${BtnDelete} {
-     
-
-      
-      
+     display: block;
+  
     }
   }
 `
